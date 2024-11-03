@@ -1,76 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
-    <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-    </dependencies>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="welcomeViewController">
+    <devices>
+        <device id="retina6_1" orientation="portrait">
+            <adaptation id="fullscreen"/>
+        </device>
+    </devices>
     <scenes>
-        <!--Welcome View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!-- Welcome View Controller Scene -->
+        <scene sceneID="welcomeScene">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="ConcerteApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController id="welcomeViewController" customClass="WelcomeViewController" customModule="YourModuleName" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="welcomeView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fzZ-77-Nel">
-                                <rect key="frame" x="24" y="82.333333333333343" width="345" height="346.33333333333326"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fzZ-77-Nel" secondAttribute="height" multiplier="1:1" id="VW9-fp-1Mg"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zf-ne-uEe">
-                                <rect key="frame" x="93" y="452" width="207" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Генерация нового кота"/>
-                                <connections>
-                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QlA-IB-dha"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-8W-rhk">
-                                <rect key="frame" x="12" y="508" width="369" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <!-- Welcome Label -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!" textAlignment="center" adjustsFontSizeToFit="NO" id="welcomeLabel">
+                                <rect key="frame" x="20" y="300" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24" weight="bold"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wpU-IX-RYf">
-                                <rect key="frame" x="178" y="420" width="37" height="37"/>
-                            </activityIndicatorView>
+
+                            <!-- Start Button -->
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="Начать" id="startButton">
+                                <rect key="frame" x="87.5" y="360" width="200" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Начать">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="o2x-8W-rhk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="EbL-nX-LtS"/>
-                            <constraint firstItem="fzZ-77-Nel" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="F7K-GM-QgP"/>
-                            <constraint firstItem="wpU-IX-RYf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fyp-vJ-OaS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o2x-8W-rhk" secondAttribute="trailing" constant="12" id="MrC-cs-XEC"/>
-                            <constraint firstItem="fzZ-77-Nel" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="QyK-BH-2Zs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fzZ-77-Nel" secondAttribute="trailing" constant="24" id="TEr-qq-V6u"/>
-                            <constraint firstItem="wpU-IX-RYf" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eRH-I1-TOE"/>
-                            <constraint firstItem="3zf-ne-uEe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="evl-jm-WJz"/>
-                            <constraint firstItem="o2x-8W-rhk" firstAttribute="top" secondItem="3zf-ne-uEe" secondAttribute="bottom" constant="21" id="jSg-aO-iMA"/>
-                            <constraint firstItem="fzZ-77-Nel" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="nvV-9I-bl5"/>
-                            <constraint firstItem="3zf-ne-uEe" firstAttribute="top" secondItem="fzZ-77-Nel" secondAttribute="bottom" constant="24" id="v4D-Zi-bAO"/>
+                            <!-- Constraints for welcome label -->
+                            <constraint firstItem="welcomeLabel" firstAttribute="centerX" secondItem="welcomeView" secondAttribute="centerX" id="centerXWelcomeLabel"/>
+                            <constraint firstItem="welcomeLabel" firstAttribute="top" secondItem="welcomeView" secondAttribute="top" constant="300" id="topWelcomeLabel"/>
+
+                            <!-- Constraints for start button -->
+                            <constraint firstItem="startButton" firstAttribute="top" secondItem="welcomeLabel" secondAttribute="bottom" constant="30" id="topStartButton"/>
+                            <constraint firstItem="startButton" firstAttribute="centerX" secondItem="welcomeView" secondAttribute="centerX" id="centerXStartButton"/>
                         </constraints>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="wpU-IX-RYf" id="Su9-Fn-WsR"/>
-                        <outlet property="catImageView" destination="fzZ-77-Nel" id="LtH-wx-aXt"/>
-                        <outlet property="statusLabel" destination="o2x-8W-rhk" id="2Bh-hC-O55"/>
+                        <segue destination="catViewController" kind="show" id="segueToCatScreen"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cat" catalog="system" width="128" height="102"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

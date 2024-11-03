@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="catViewController">
+    <devices>
+        <device id="retina6_1" orientation="portrait">
+            <adaptation id="fullscreen"/>
+        </device>
+    </devices>
+    <scenes>
+        <!-- Cat View Controller Scene -->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="catViewController" customClass="CatViewController" customModule="YourModuleName" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="view">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <subviews>
+                            <!-- Status Label -->
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка кота завершена" textAlignment="center" adjustsFontSizeToFit="NO" id="statusLabel">
+                                <rect key="frame" x="20" y="40" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            
+                            <!-- Cat Image View -->
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="catImageView">
+                                <rect key="frame" x="20" y="80" width="335" height="335"/>
+                            </imageView>
+                            
+                            <!-- Cat Label -->
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="самостоятельная iOS" textAlignment="center" adjustsFontSizeToFit="NO" id="catLabel">
+                                <rect key="frame" x="20" y="425" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            
+                            <!-- Generate Button -->
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="Генерация нового кота" id="generateButton">
+                                <rect key="frame" x="87.5" y="470" width="200" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Генерация нового кота">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateNewCat:" destination="catViewController" eventType="touchUpInside" id="buttonAction"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <!-- Constraints for status label -->
+                            <constraint firstItem="statusLabel" firstAttribute="top" secondItem="view" secondAttribute="top" constant="40" id="topStatusLabel"/>
+                            <constraint firstItem="statusLabel" firstAttribute="centerX" secondItem="view" secondAttribute="centerX" id="centerXStatusLabel"/>
+                            
+                            <!-- Constraints for cat image view -->
+                            <constraint firstItem="catImageView" firstAttribute="top" secondItem="statusLabel" secondAttribute="bottom" constant="10" id="topCatImageView"/>
+                            <constraint firstItem="catImageView" firstAttribute="centerX" secondItem="view" secondAttribute="centerX" id="centerXCatImageView"/>
+                            <constraint firstItem="catImageView" firstAttribute="width" constant="335" id="widthCatImageView"/>
+                            <constraint firstItem="catImageView" firstAttribute="height" constant="335" id="heightCatImageView"/>
+                            
+                            <!-- Constraints for cat label -->
+                            <constraint firstItem="catLabel" firstAttribute="top" secondItem="catImageView" secondAttribute="bottom" constant="10" id="topCatLabel"/>
+                            <constraint firstItem="catLabel" firstAttribute="centerX" secondItem="view" secondAttribute="centerX" id="centerXCatLabel"/>
+                            
+                            <!-- Constraints for generate button -->
+                            <constraint firstItem="generateButton" firstAttribute="top" secondItem="catLabel" secondAttribute="bottom" constant="15" id="topGenerateButton"/>
+                            <constraint firstItem="generateButton" firstAttribute="centerX" secondItem="view" secondAttribute="centerX" id="centerXGenerateButton"/>
+                        </constraints>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
